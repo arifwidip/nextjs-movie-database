@@ -7,8 +7,6 @@ interface TrendingMoviesResponse {
   total_results: number
 }
 
-const getTrendingMovies = (timeWindow: String) => {
+export default function getTrendingMovies(timeWindow: String) {
   return api.get<TrendingMoviesResponse>(`/trending/movie/${timeWindow}`)
 }
-
-export default getTrendingMovies
