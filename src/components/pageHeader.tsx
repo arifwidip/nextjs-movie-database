@@ -1,8 +1,7 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { FilmIcon } from "@heroicons/react/24/outline";
-import { Input } from "@/components/ui/input";
-
-import { cn } from "@/lib/utils";
+import SearchForm from "@/components/ui/searchForm";
 
 export default function PageHeader() {
   return (
@@ -13,9 +12,9 @@ export default function PageHeader() {
             <FilmIcon className="w-6 h-6" />
           </Link>
 
-          <form className="w-1/2">
-            <Input type="text" className="h-8" placeholder="Search movie" />
-          </form>
+          <Suspense>
+            <SearchForm />
+          </Suspense>
         </div>
       </div>
     </header>
